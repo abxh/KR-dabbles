@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// this is a dabble into printf. not strictly an K & R exercise in chapter 1.
+
 // reference:
 // https://cplusplus.com/reference/cstdio/printf/
-
+// https://learn.microsoft.com/en-us/cpp/c-runtime-library/format-specification-syntax-printf-and-wprintf-functions?view=msvc-170
 
 // Lessons:
 // variables are sometimes 0 in and pointers sometimes point to NILL. however i should not
@@ -56,13 +58,14 @@ int main(void) {
 
     int *x9 = (void*) 0;
     printf("pointer address, %%p (such that it points to NILL or (void*)): %p\n", x9);
+    free(x9);
 
     int *x10 = malloc(2*sizeof(int));
     printf("pointer adress, %%p (such that it points to int[2]): \t%p\n", x10);
     free(x10);
 
-    // format specifier:
-    // %[flags][width][.precision][length]specifier
+    float x11 = 5.123456;
+    printf("float with precision provided, %.*f\n", 3, x11);
 
     return 0;
 }
