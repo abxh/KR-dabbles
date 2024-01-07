@@ -11,14 +11,6 @@
 // variables are sometimes 0 in and pointers sometimes point to NILL. however i should not
 // rely on this behaivour. is unreliable.
 
-// sidenote:
-// printf prints (null) as pointer address to NILL for some reason...
-// https://stackoverflow.com/a/55181027
-// NULL pointer is (void*) 0, but the 0 there is not garanteed.
-// it is an address such that no other object has that addres, and typing (void*) 1 in a system
-// where NULL = (void*) 0, gives errors (it seems like). you cannot deference (void*) as some
-// specification (probably) disallows it... thought as there is no value at (void*) 0.
-
 int main(void) {
     
     int x1 = 1;
@@ -61,7 +53,7 @@ int main(void) {
     free(x9);
 
     int *x10 = malloc(2*sizeof(int));
-    printf("pointer adress, %%p (such that it points to int[2]): \t%p\n", x10);
+    printf("pointer adress, %%p (such that it points to int[2]): \t%p\n", (void*) x10); // remember (void*) here. this I learned later
     free(x10);
 
     float x11 = 5.123456;
