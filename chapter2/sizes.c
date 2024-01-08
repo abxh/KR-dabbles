@@ -5,6 +5,10 @@ int main(void) {
 
     // note: these are defined by the system.
 
+    //   mapping the types to sizeof, we are garanteed to get:
+    //   _Bool <= char <= short int <= int <= long int <= long long int
+
+    printf("size of _Bool: %lu bytes\n", sizeof(_Bool));
     printf("size of char: %lu bytes\n", sizeof(char));
     printf("size of short (int): %lu bytes\n", sizeof(short));
     printf("size of int: %lu bytes\n", sizeof(int));
